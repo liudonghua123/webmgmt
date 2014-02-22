@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/webmgmt.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/webmgmt.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- project default level -->
+	<logger name="com.bill99.yn.webmgmt" level="INFO" />
+
+	<!--log4jdbc -->
+	<logger name="jdbc.sqltiming" level="INFO"/>
+	
+	
+    <logger name="org.hibernate" level="DEBUG" />
+    
+    <!-- http://www.mkyong.com/hibernate/how-to-display-hibernate-sql-parameter-values-log4j/ -->
+  	<logger name="org.hibernate.type" level="trace"/>
+  	<logger name="org.hibernate" level="INFO"/>
+
+    <logger name="org.springframework" level="TRACE" />
+    <logger name="org.springframework.transaction" level="INFO" />
+    <logger name="org.springframework.security" level="INFO" /> 
+    <logger name="org.springframework.web.servlet.mvc" level="TRACE" /> 
+
+	<!-- http://stackoverflow.com/questions/1965454/showing-a-spring-transaction-in-log -->
+	<!-- http://logback.qos.ch/translator/ -->
+	<logger name="org.springframework.orm.jpa" level="DEBUG" />
+	<logger name="org.springframework.transaction.interceptor" level="DEBUG" />
+	<logger name="org.springframework.jdbc" level="DEBUG" />
+	<logger name="org.springframework.transaction" level="DEBUG" />
+
+	<!-- Log level: (ALL), TRACE, DEBUG, INFO, WARN, ERROR, FATAL, (OFF) -->
+	<root level="INFO">
+		<appender-ref ref="console" />
+		<appender-ref ref="rollingFile" />
+	</root>
+</configuration>

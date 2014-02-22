@@ -1,0 +1,47 @@
+/* align center the text in html table row */
+.table-center-align td, .table-center-align th {
+	text-align: center;
+	vertical-align: middle;
+}
+
+/* http://mac.pcbeta.com/ */
+body, td, input, textarea, select, button {
+	font-family: Avenir,Lucida Grande,Calibri,Trebuchet MS,Helvetica,Arial,Hiragino Sans GB,WenQuanYi Micro Hei,STHeiti,Microsoft Jhenghei,Nanum Gothic,sans-serif;
+	text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+/* http://yichen0831.wordpress.com/2013/08/19/html將footer置底的方法使用css/ */
+/* http://www.wibibi.com/info.php?tid=138 */
+html, body {
+    /* 設定body高度為100% 拉到視窗可視的大小 */
+    height: 100%;
+}
+
+div.container {
+    /* 設定高度最小為100%, 如果內容區塊很多, 可以長大 */
+    min-height: 100%;
+    /* 位置設為relative, 作為footer區塊位置的參考 */
+    position: relative;
+}
+
+#header {
+    /* 設定header的高度 */
+    /*height: 50px;*/
+    box-sizing: border-box;
+}
+
+#content {
+    /* 留出header及footer區塊的空間 */
+    /*padding-top: 75px;*/
+    padding-bottom: 75px;
+}
+
+#footer {
+    /* 設定footer的高度 */
+    height: 75px;
+    box-sizing: border-box;
+    /* 設定footer絕對位置在底部 */
+    position: absolute;
+    bottom: 0;
+    /* 展開footer寬度 */
+    width: 100%;
+}
